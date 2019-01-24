@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks", "AdventureWorks\AdventureWorks.csproj", "{9D59C9EB-986A-4305-AD07-31C80CC3A931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{F30514A9-84E2-4331-A137-C134A7781492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{11A47B02-23A8-475D-99C4-4E223C8BB260}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D59C9EB-986A-4305-AD07-31C80CC3A931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D59C9EB-986A-4305-AD07-31C80CC3A931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D59C9EB-986A-4305-AD07-31C80CC3A931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D59C9EB-986A-4305-AD07-31C80CC3A931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30514A9-84E2-4331-A137-C134A7781492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30514A9-84E2-4331-A137-C134A7781492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30514A9-84E2-4331-A137-C134A7781492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30514A9-84E2-4331-A137-C134A7781492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A47B02-23A8-475D-99C4-4E223C8BB260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A47B02-23A8-475D-99C4-4E223C8BB260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A47B02-23A8-475D-99C4-4E223C8BB260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A47B02-23A8-475D-99C4-4E223C8BB260}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9D98221-E4D9-4D04-878D-F25B2E81910C}
+	EndGlobalSection
+EndGlobal

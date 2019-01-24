@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true"                   
+                   namespace="Core.Entities" assembly="Core">
+  
+  <class name="SalesTerritory" table="Sales.SalesTerritory">
+  <id name="AddressId">
+    <column name="TerritoryID" sql-type="int" not-null="true" />
+    <generator class="identity"/>
+  </id>
+
+  <property name="Name">
+    <column name="Name" sql-type ="nvarchar(50)" not-null="true" />
+  </property>
+  <property name="RegCode">
+    <column name="CountryRegionCode" sql-type ="int" not-null="true" />
+  </property>
+
+  <property name="Group">
+    <column name="Group" sql-type ="nvarchar(50)" not-null="true" />
+  </property>
+
+  <property name="SalesYtd">
+    <column name="SalesYTD" sql-type ="money" not-null="true" />
+  </property>
+  <property name="SalesLastYear">
+    <column name="SalesLastYear" sql-type ="money" not-null="true" />
+  </property>
+  <property name="LostYtd">
+    <column name="CostYTD" sql-type ="money" not-null="true" />
+  </property>
+  <property name="LostLastYear">
+    <column name="CostLastYear" sql-type ="money" not-null="true" />
+  </property>
+
+  <property name="RowGuid">
+    <column name="rowguid" sql-type ="uniqueidentifier" not-null="true" />
+  </property>
+
+  <property name="ModifeDateTime">
+    <column name ="ModifiedDate" sql-type="datetime" not-null="true"/>
+  </property>
+  </class>
+</hibernate-mapping>

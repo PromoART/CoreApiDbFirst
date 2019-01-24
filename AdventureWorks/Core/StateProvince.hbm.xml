@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="false" default-lazy="true" default-access="property"
+                   namespace="Core.Entities" assembly="Core">
+  
+  <class name="StateProvince" table="[StateProvince]">
+
+    <id name="ProvinceId"  access="property">
+      <column name="StateProvinceID" sql-type="int" not-null="true" />
+      <generator class="identity"/>
+    </id>
+
+    <property name="Code">
+      <column name="StateProvinceCode" sql-type ="nvarchar(3)" not-null="true" />
+    </property>
+
+    <property name="RegionCode">
+      <column name="CountryRegionCode" sql-type ="int" not-null="true" />
+    </property>
+
+    <property name="IsOnlyStateProvince">
+      <column name="IsOnlyStateProvinceFlag" sql-type ="Flag(bit)" not-null="true" />
+    </property>
+    <property name="Name">
+      <column name="Name" sql-type ="nvarchar(50)" not-null="true" />
+    </property>
+
+    <!--<property name="SalesTerritoryId">
+      <column name="TerritoryID" sql-type ="int" not-null="true" />
+    </property>-->
+
+    <property name="RowGuid">
+      <column name="rowguid" sql-type ="uniqueidentifier" not-null="true" />
+    </property>
+
+    <property name="ModifeDateTime">
+      <column name ="ModifiedDate" sql-type="datetime" not-null="true"/>
+    </property>
+
+    <!--<bag name="Addresses">
+      <key column="StateProvinceID"/>
+      <one-to-many class ="PersonAddress"/>
+    </bag>-->
+    
+  </class>
+
+</hibernate-mapping>
