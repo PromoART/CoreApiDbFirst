@@ -1,0 +1,25 @@
+/.svn
+bin
+obj
+*.dbml
+*.dbmdl
+*.user
+*.log
+/dist/*
+/packages/*
+/publish/*
+/*.suo
+/.vs
+/.build
+/.nuget
+*/log/
+_Resharper.Caches/
+teamcityLog.log
+*node_modules*
+*ncrunch*
+node_modules/
+*NCrunch*
+*.nupkg
+_Resharper.Caches/
+# QUnit / Chutzpah test files
+test/**/*.test.html
