@@ -5,6 +5,8 @@ obj
 *.dbmdl
 *.user
 *.log
+*.ide-shm
+*.ide-wal
 /dist/*
 /packages/*
 /publish/*
