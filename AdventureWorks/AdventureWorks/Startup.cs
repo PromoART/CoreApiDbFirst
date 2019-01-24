@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Castle.DynamicProxy;
 using Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Services;
 
 namespace AdventureWorks
@@ -34,7 +30,9 @@ namespace AdventureWorks
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
+          
             builder.RegisterType<DataProvider>().As<IDataProvider>();
+
             AppContainer = builder.Build();
 
             return new AutofacServiceProvider(AppContainer);
@@ -49,6 +47,8 @@ namespace AdventureWorks
             }
 
             app.UseMvc();
+
+            
         }
     }
 }

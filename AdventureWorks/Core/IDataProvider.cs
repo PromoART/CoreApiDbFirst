@@ -10,5 +10,11 @@ namespace Core
         IEnumerable<PersonAddress> GetPersonAdreses();
 
         IEnumerable<StateProvince> GetStateProvinces();
+
+        IEnumerable<CountryRegion> GetCountryRegions();
+
+        PersonAddress GetPersonAddress(int addressId);
+        StateProvince GetStateProvince(int provinceId);
+
     }
 }

@@ -16,9 +16,10 @@ namespace AdventureWorks.Controllers
         {
             _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
         }
-        // GET api/values
+        // GET api/values/addresses
         [HttpGet]
-        public IEnumerable<PersonAddress> Get()
+        [Route("addresses")]
+        public IEnumerable<PersonAddress> GetAddresses()
         {
             var adresses = _dataProvider.GetPersonAdreses();
             //var provinces = _dataProvider.GetStateProvinces();
@@ -26,11 +27,41 @@ namespace AdventureWorks.Controllers
             return adresses; //new string[] { "value1", "value2" };
         }
 
+        //GET api/values/provinces
+        [HttpGet]
+        [Route("provinces")]
+        public IEnumerable<StateProvince> GetProvince()
+        {
+            var provinces = _dataProvider.GetStateProvinces();
+
+            return provinces; //new string[] { "value1", "value2" };
+        }
+
+        //GET api/values/provinces
+        [HttpGet]
+        [Route("regions")]
+        public IEnumerable<CountryRegion> GetRegions()
+        {
+            var regions = _dataProvider.GetCountryRegions();
+
+            return regions; //new string[] { "value1", "value2" };
+        }
+
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [Route("addresses")]
+        public ActionResult<PersonAddress> GetAddress(int id)
         {
-            return "value";
+            var address = _dataProvider.GetPersonAddress(id);
+            return address;
+        }
+        // GET api/values/5
+        [HttpGet("{id}")]
+        [Route("provinces")]
+        public ActionResult<StateProvince> Getprovince(int id)
+        {
+            var province = _dataProvider.GetStateProvince(id);
+            return province;
         }
 
         // POST api/values

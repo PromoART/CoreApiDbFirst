@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="false" default-lazy="true" default-access="property"
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="false" default-lazy="false" default-access="property"
                    namespace="Core.Entities" assembly="Core">
   
-  <class name="StateProvince" table="[StateProvince]">
+  <class name="StateProvince" table="[Person].[StateProvince]">
 
     <id name="ProvinceId"  access="property">
       <column name="StateProvinceID" sql-type="int" not-null="true" />
@@ -36,10 +36,10 @@
       <column name ="ModifiedDate" sql-type="datetime" not-null="true"/>
     </property>
 
-    <!--<bag name="Addresses">
+    <bag name="Addresses" inverse="true" fetch="select" cascade="none">
       <key column="StateProvinceID"/>
       <one-to-many class ="PersonAddress"/>
-    </bag>-->
+    </bag>
     
   </class>
 

@@ -1,12 +1,11 @@
 /.svn
 bin
 obj
+v15
 *.dbml
 *.dbmdl
 *.user
 *.log
-*.ide-shm
-*.ide-wal
 /dist/*
 /packages/*
 /publish/*

@@ -13,22 +13,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="CountryRegion.hbm.xml">
+    <EmbeddedResource Include="Hbm\CountryRegion.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonAdress.hbm.xml">
+    <EmbeddedResource Include="Hbm\PersonAdress.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Nhibernate.cfg.xml">
+    <EmbeddedResource Include="Hbm\Nhibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesTerritory.hbm.xml">
+    <EmbeddedResource Include="Hbm\SalesTerritory.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="StateProvince.hbm.xml">
+    <EmbeddedResource Include="Hbm\StateProvince.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
