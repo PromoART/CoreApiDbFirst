@@ -23,6 +23,7 @@ namespace AdventureWorks.Controllers
         public IEnumerable<PersonAddress> GetAddresses()
         {
             var adresses = _dataProvider.GetPersonAdreses();
+            //_iDataProvider.GetPersonAdreses();
             //var provinces = _dataProvider.GetStateProvinces();
 
             return adresses; //new string[] { "value1", "value2" };
@@ -34,7 +35,6 @@ namespace AdventureWorks.Controllers
         public IEnumerable<StateProvince> GetProvince()
         {
             var provinces = _dataProvider.GetStateProvinces();
-
             return provinces; //new string[] { "value1", "value2" };
         }
 

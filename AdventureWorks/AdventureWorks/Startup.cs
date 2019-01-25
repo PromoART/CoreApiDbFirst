@@ -1,6 +1,7 @@
 ﻿using System;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Core;
 using Microsoft.AspNetCore.Builder;
@@ -30,11 +31,12 @@ namespace AdventureWorks
 
             var builder = new ContainerBuilder();
             builder.Populate(services);
-          
+
             builder.RegisterType<DataProvider>().As<IDataProvider>();
+            //builder.RegisterType<InterceptedDataProvider>().As<IIntercepdetDataProvider>().EnableInterfaceInterceptors().InterceptedBy("dataInterceptor");
+            //builder.RegisterType<DataProviderInterceptor>().Named<IInterceptor>("dataInterceptor");
 
             AppContainer = builder.Build();
-
             return new AutofacServiceProvider(AppContainer);
         }
 

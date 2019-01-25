@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using Core.Entities;
+using NHibernate;
 
 namespace Core
 {
-    public interface IDataProvider
+    public interface IIntercepdetDataProvider
     {
+        void SetSession(ISession session);
+
         IEnumerable<PersonAddress> GetPersonAdreses();
 
         IEnumerable<StateProvince> GetStateProvinces();
@@ -20,7 +23,7 @@ namespace Core
         void CreateStateProvince(StateProvince province);
 
         void UpdateAddress(PersonAddress address);
-        
+
         void UpdateStateProvince(StateProvince province);
 
         void DeleteAddress(int id);

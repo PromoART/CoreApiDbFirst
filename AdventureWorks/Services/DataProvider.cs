@@ -7,12 +7,6 @@ namespace Services
 {
     public class DataProvider : IDataProvider
     {
-        public void CheckConnection()
-        {
-            var session = SessionFactory.OpenSession();
-            session.Close();
-        }
-
         public IEnumerable<PersonAddress> GetPersonAdreses()
         {
             var session = SessionFactory.OpenSession();
@@ -118,6 +112,80 @@ namespace Services
                 using (var scope = session.BeginTransaction())
                 {
                     session.Save(province);
+                    scope.Commit();
+                }
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+
+        public void UpdateAddress(PersonAddress address)
+        {
+            var session = SessionFactory.OpenSession();
+
+            try
+            {
+                using (var scope = session.BeginTransaction())
+                {
+                    session.Update(address);
+                    scope.Commit();
+                }
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+
+        public void UpdateStateProvince(StateProvince province)
+        {
+            var session = SessionFactory.OpenSession();
+
+            try
+            {
+                using (var scope = session.BeginTransaction())
+                {
+                    session.Update(province);
+                    scope.Commit();
+                }
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+
+        public void DeleteAddress(int id)
+        {
+            var session = SessionFactory.OpenSession();
+            try
+            {
+                var query = session.Query<PersonAddress>().Where(x => x.AddressId == id);
+
+                using (var scope = session.BeginTransaction())
+                {
+                    session.Delete(query);
+                    scope.Commit();
+                }
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+
+        public void DeleteStateProvince(int id)
+        {
+            var session = SessionFactory.OpenSession();
+            try
+            {
+                var query = session.Query<PersonAddress>().Where(x => x.AddressId == id);
+
+                using (var scope = session.BeginTransaction())
+                {
+                    session.Delete(query);
                     scope.Commit();
                 }
             }

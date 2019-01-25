@@ -5,11 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Castle.Core" Version="4.3.1" />
     <PackageReference Include="NHibernate" Version="5.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Autofac.Extras.DynamicProxy">
+      <HintPath>..\..\..\..\..\Users\a.himbitski\.nuget\packages\autofac.extras.dynamicproxy\4.5.0\lib\netstandard1.3\Autofac.Extras.DynamicProxy.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
