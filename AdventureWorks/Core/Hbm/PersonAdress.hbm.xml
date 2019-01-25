@@ -24,7 +24,7 @@
       <column name="PostalCode" sql-type ="nvarchar(15)" not-null="true" />
     </property>
 
-    <property name="ProvinceId" insert="false" update="false">
+    <property name="ProvinceId">
       <column name="StateProvinceID" sql-type ="int" not-null="true" />
     </property>
 
@@ -35,7 +35,7 @@
       <column name ="ModifiedDate" sql-type="datetime" not-null="true"/>
     </property>
 
-    <!--<many-to-one name ="StateProvince" class ="StateProvince" column="StateProvinceID" insert="false" update="false"/>-->
+    <!--<many-to-one name ="StateProvince" class ="StateProvince" column="StateProvinceID"/>-->
   
   </class>
 </hibernate-mapping>

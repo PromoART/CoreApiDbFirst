@@ -2,7 +2,6 @@
 using System.Linq;
 using Core;
 using Core.Entities;
-using NHibernate.Linq;
 
 namespace Services
 {
@@ -85,6 +84,42 @@ namespace Services
             {
                 var person = session.Query<StateProvince>().SingleOrDefault(x => x.ProvinceId == id);
                 return person;
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+
+        public void CreatePersonAddress(PersonAddress address)
+        {
+            var session = SessionFactory.OpenSession();
+
+            try
+            {
+                using (var scope = session.BeginTransaction())
+                {
+                    session.Save(address);
+                    scope.Commit();
+                }
+            }
+            finally
+            {
+                session.Close();
+            }
+        }
+
+        public void CreateStateProvince(StateProvince province)
+        {
+            var session = SessionFactory.OpenSession();
+
+            try
+            {
+                using (var scope = session.BeginTransaction())
+                {
+                    session.Save(province);
+                    scope.Commit();
+                }
             }
             finally
             {

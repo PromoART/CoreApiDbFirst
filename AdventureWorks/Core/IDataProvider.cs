@@ -16,5 +16,8 @@ namespace Core
         PersonAddress GetPersonAddress(int addressId);
         StateProvince GetStateProvince(int provinceId);
 
+        void CreatePersonAddress(PersonAddress address);
+
+        void CreateStateProvince(StateProvince province);
     }
 }

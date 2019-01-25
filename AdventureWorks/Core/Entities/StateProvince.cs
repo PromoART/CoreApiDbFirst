@@ -17,7 +17,7 @@ namespace Core.Entities
 
         public virtual string Name { get; set; }
 
-        //public virtual int SalesTerritoryId { get; set; }
+        public virtual int SalesTerritoryId { get; set; }
 
         public virtual Guid RowGuid { get; set; }
 

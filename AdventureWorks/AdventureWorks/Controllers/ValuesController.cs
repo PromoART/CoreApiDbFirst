@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core;
 using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -63,11 +64,43 @@ namespace AdventureWorks.Controllers
             var province = _dataProvider.GetStateProvince(id);
             return province;
         }
+        // POST api/values
+        [HttpPost]
+        [Route("addresses")]
+        public void PostAddress([FromBody] PersonAddress personAddress)
+        {
+            var address = new PersonAddress
+            {
+                City = "NewYork",
+                Line1 = "another street",
+                PostalCode = "98104",
+                ProvinceId = 195,
+                StateProvince = new StateProvince{ ProvinceId = 195},
+                ModifeDateTime = DateTime.Now,
+                RowGuid = Guid.NewGuid()
+            };
+
+           _dataProvider.CreatePersonAddress(address);
+        }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("provinces")]
+        public void PostProvince([FromBody] StateProvince province)
         {
+            var newProvince = new StateProvince
+            {
+                Name = "Brest district",
+                RegionCode = "BY",
+                ModifeDateTime = DateTime.Now,
+                SalesTerritoryId = 2,
+                Code = "31",
+                IsOnlyStateProvince = false,
+                RowGuid = Guid.NewGuid()
+
+            };
+
+            _dataProvider.CreateStateProvince(newProvince);
         }
 
         // PUT api/values/5
