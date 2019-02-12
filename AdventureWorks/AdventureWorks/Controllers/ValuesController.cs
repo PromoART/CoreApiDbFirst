@@ -69,18 +69,7 @@ namespace AdventureWorks.Controllers
         [Route("addresses")]
         public void PostAddress([FromBody] PersonAddress personAddress)
         {
-            var address = new PersonAddress
-            {
-                City = "NewYork",
-                Line1 = "another street",
-                PostalCode = "98104",
-                ProvinceId = 195,
-                StateProvince = new StateProvince{ ProvinceId = 195},
-                ModifeDateTime = DateTime.Now,
-                RowGuid = Guid.NewGuid()
-            };
-
-           _dataProvider.CreatePersonAddress(address);
+           _dataProvider.CreatePersonAddress(personAddress);
         }
 
         // POST api/values
@@ -88,19 +77,7 @@ namespace AdventureWorks.Controllers
         [Route("provinces")]
         public void PostProvince([FromBody] StateProvince province)
         {
-            var newProvince = new StateProvince
-            {
-                Name = "Brest district",
-                RegionCode = "BY",
-                ModifeDateTime = DateTime.Now,
-                SalesTerritoryId = 2,
-                Code = "31",
-                IsOnlyStateProvince = false,
-                RowGuid = Guid.NewGuid()
-
-            };
-
-            _dataProvider.CreateStateProvince(newProvince);
+            _dataProvider.CreateStateProvince(province);
         }
 
         // PUT api/values/5
